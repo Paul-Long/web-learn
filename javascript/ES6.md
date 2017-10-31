@@ -104,3 +104,105 @@ function findMax() {
 * 闭包的用途： 一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
 
 * 注意点： 使用不当，耗内存。
+
+## promise 对象
+* Promise 是异步变成的一种解决方案
+
+```bash
+var promise = new Promise(function(resolve, reject) {
+  // ... some code
+
+  if (/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error);
+  }
+});
+promise.then(function(value) {
+  // success
+}, function(error) {
+  // failure
+});
+new Promise((resolve, reject) => {
+  resolve(1);
+  console.log(2);
+}).then(r => {
+  console.log(r);
+});
+```
+
+## Generator 函数
+
+```bash
+function * functionName () {
+    yield 'hello';
+    yield 'world';
+    return 'ending';
+}
+var hw = helloWorldGenerator();
+hw.next()
+// { value: 'hello', done: false }
+
+hw.next()
+// { value: 'world', done: false }
+
+hw.next()
+// { value: 'ending', done: true }
+
+hw.next()
+// { value: undefined, done: true }
+```
+
+第一次调用，Generator 函数开始执行，直到遇到第一个yield表达式为止。next方法返回一个对象，它的value属性就是当前yield表达式的值hello，done属性的值false，表示遍历还没有结束。
+
+第二次调用，Generator 函数从上次yield表达式停下的地方，一直执行到下一个yield表达式。next方法返回的对象的value属性就是当前yield表达式的值world，done属性的值false，表示遍历还没有结束。
+
+第三次调用，Generator 函数从上次yield表达式停下的地方，一直执行到return语句（如果没有return语句，就执行到函数结束）。next方法返回的对象的value属性，就是紧跟在return语句后面的表达式的值（如果没有return语句，则value属性的值为undefined），done属性的值true，表示遍历已经结束。
+
+第四次调用，此时 Generator 函数已经运行完毕，next方法返回对象的value属性为undefined，done属性为true。以后再调用next方法，返回的都是这个值。
+
+## async 函数
+
+```bash
+async function timeout(ms) {
+  await new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint('hello world', 50);
+```
+
+`async` 函数返回一个 Promise 对象。
+
+```bash
+async function f() {
+  return await 123;
+}
+
+f().then(v => console.log(v))
+// 123
+```
+
+## Class
+* `ES6` 可以通过 `extends` 关键字实现继承， 继承会继承父类的所有属性和方法。
+
+```bash
+class Point {
+}
+class ColorPoint extends Point {
+  constructor(x, y, color) {
+    super(x, y); // 调用父类的constructor(x, y)
+    this.color = color;
+  }
+
+  toString() {
+    return this.color + ' ' + super.toString(); // 调用父类的toString()
+  }
+}
+```
