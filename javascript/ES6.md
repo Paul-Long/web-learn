@@ -4,7 +4,7 @@
 <p>字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。</p>
 <p>可以通过typeof 来检测数据类型</p>
 
-```bash
+```js
 typeof "John"                // 返回 string
 typeof 3.14                  // 返回 number
 typeof false                 // 返回 boolean
@@ -42,7 +42,7 @@ typeof null                  // 返回 object
 * 关键字function ， function functionName(params) {
     执行代码
 }
-```bash
+```js
 function myFunction(a, b) {
     return a * b;
 }
@@ -50,13 +50,13 @@ function myFunction(a, b) {
 
 * 匿名函数
 
-```bash
+```js
 var func = () => {}
 ```
 
 * 显式参数(Parameters)
 
-```bash
+```js
 functionName(parameter1, parameter2, parameter3) {
     // 要执行的代码……
 }
@@ -64,7 +64,7 @@ functionName(parameter1, parameter2, parameter3) {
 
 * 隐式参数(Arguments)
 
-```bash
+```js
 x = findMax(1, 123, 500, 115, 44, 88);
 
 function findMax() {
@@ -85,7 +85,7 @@ function findMax() {
 
 * 作用域: 全局变量 和 局部变量, Javascript 语言的特殊之处，就在于函数内部可以直接读取全局变量。在函数外部无法读取函数内部的局部变量。
 * 如何从外部读取局部变量？
-```bash
+```js
 　　function f1(){
 　　　　var n=999;
 　　　　function f2(){
@@ -108,7 +108,7 @@ function findMax() {
 ## promise 对象
 * Promise 是异步变成的一种解决方案
 
-```bash
+```js
 var promise = new Promise(function(resolve, reject) {
   // ... some code
 
@@ -133,7 +133,7 @@ new Promise((resolve, reject) => {
 
 ## Generator 函数
 
-```bash
+```js
 function * functionName () {
     yield 'hello';
     yield 'world';
@@ -163,7 +163,7 @@ hw.next()
 
 ## async 函数
 
-```bash
+```js
 async function timeout(ms) {
   await new Promise((resolve) => {
     setTimeout(resolve, ms);
@@ -180,7 +180,7 @@ asyncPrint('hello world', 50);
 
 `async` 函数返回一个 Promise 对象。
 
-```bash
+```js
 async function f() {
   return await 123;
 }
@@ -192,7 +192,7 @@ f().then(v => console.log(v))
 ## Class
 * `ES6` 可以通过 `extends` 关键字实现继承， 继承会继承父类的所有属性和方法。
 
-```bash
+```js
 class Point {
 }
 class ColorPoint extends Point {

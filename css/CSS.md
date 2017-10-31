@@ -1,7 +1,7 @@
 # CSS 学习笔记
 
 ## 基本语法
-```bash
+```css
 .class {
     color: red;
 }
@@ -21,7 +21,7 @@
 * Border(边框) - 围绕在内边距和内容外的边框。
 * Padding(内边距) - 清除内容周围的区域，内边距是透明的。
 * Content(内容) - 盒子的内容，显示文本和图像。
-```bash
+```css
 div {
     width: 300px;
     border: 25px solid green;
@@ -30,7 +30,7 @@ div {
 }
 ```
 ## 分组嵌套
-```bash
+```css
 h1,h2,p
 {
     color:green;
@@ -174,7 +174,7 @@ h1,h2,p
 * 图片居中对齐 : margin: auto
 * 左右对齐 : 使用定位方式（absolute） or 使用float方式
 * 垂直居中对齐 : 使用padding or 使用line-height or 使用position 和transform
-```bash
+```css
 .center {
     height: 200px;
     position: relative;
